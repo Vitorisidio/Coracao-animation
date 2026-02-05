@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at center, #120016, #000);
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+
+
+    display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;  
+}
+
+svg {
+  width: 90%;       /* ocupa 90% da largura da tela */
+  max-width: 800px; /* não ultrapassa 800px */
+  height: auto;     /* mantém proporção */
+}
+
+path{
+  fill:none;
+  stroke:#ff33ff; /* rosa neon */
+  stroke-width:5;
+  filter: drop-shadow(0 0 10px #ff33ff) drop-shadow(0 0 20px #ff33ff);
+}
+
+/* coração principal */
+.coracao{
+    stroke-dasharray: 1000;   /* comprimento aproximado do traço */
+  stroke-dashoffset: 1000;  /* começa invisível */
+  animation: desenhando 10s forwards 2.5s, pulsar 3s infinite ease-in-out;
+}
+@keyframes desenhando{
+  to { stroke-dashoffset: 0; }
+}
+
+  @keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+
+.texto-coracao {
+  opacity: 0;
+  fill: #fff;
+  letter-spacing: 2px;
+  font-size: 35px; 
+  font-family: 'Cookie', cursive;
+  text-anchor: middle;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,.6));
+  animation: textoAparecer 1s forwards 11.5s, pulsar 3s infinite ease-in-out 6s;
+}
+
+@keyframes textoAparecer {
+  to { opacity: 1; }
+}
+
+.coracaozinho{
+    stroke-dasharray: 1000;   /* comprimento aproximado do traço */
+  stroke-dashoffset: 1000;  /* começa invisível */
+  animation: desenho 15s forwards, pulsos 1.5s infinite;
+}
+
+@keyframes desenho{
+  to { stroke-dashoffset: 0; }
+}
+
+@media (max-width: 430px) {
+  svg {
+    width: 95%;  /* ocupa quase toda a largura */
+  }
+
+  .texto-coracao {
+    font-size: 25px; /* texto menor para caber na tela */
+  }
+}
