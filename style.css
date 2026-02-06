@@ -13,9 +13,9 @@ body {
 }
 
 svg {
-  width: 90%;       /* ocupa 90% da largura da tela */
-  max-width: 800px; /* não ultrapassa 800px */
-  height: auto;     /* mantém proporção */
+  width: 90%;
+  max-width: 800px;
+  height: auto;
 }
 
 path{
@@ -68,11 +68,12 @@ path{
 
 @media (max-width: 430px) {
   svg {
-    width: 100%;  /* ocupa quase toda a largura */
-    max-width: 100vw;
+    width: 100vw;      /* quase toda largura da tela */
+    height: 100vh;     /* quase toda altura da tela */
+    max-width: none;  /* remove limite de 800px */
   }
 
   .texto-coracao {
-    font-size: 25px; /* texto menor para caber na tela */
+    font-size: 6vw; /* texto menor para caber na tela */
   }
 }
